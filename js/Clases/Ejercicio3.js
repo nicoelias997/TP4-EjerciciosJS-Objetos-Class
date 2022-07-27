@@ -24,8 +24,7 @@ class Rectangulos{
         alert("Inregesa numeros, y que sean positivos!!");
         return this.modificarPropiedades();
     }
-
-
+    
     if(this.alto != newAlto || this.ancho != newAncho){
         this.alto = newAlto;
         this.ancho = newAncho;
