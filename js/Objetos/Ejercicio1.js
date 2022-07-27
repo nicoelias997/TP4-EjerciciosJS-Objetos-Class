@@ -13,7 +13,8 @@ const auto = {
         },
     apagado: () => {
         
-            document.write("Apagaste el vehiculo")
+            document.write("Apagaste el vehiculo"); // no entiendo muy bien que es lo que pide de salida aqui
+        
     }
 }
 auto.encendido();
