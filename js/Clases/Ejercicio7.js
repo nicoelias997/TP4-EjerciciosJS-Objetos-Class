@@ -16,50 +16,60 @@
 // Crea un menú con opciones por consola para probar todas estas funcionalidades.
 
 class AgendaTelefonica{
-    constructor(contactos = {}){
+    constructor(contactos = []){
         this.contactos = contactos;
     }
     set agregarContacto(contacto){
-        if(Object.keys(this.contactos).length < 10){
-            this.contactos.push(contacto);
+        if((this.contactos).length < 10){
+            this.contactos.push(contacto)
         } else {
             document.write(`<p>La agenda esta llena! Debes eliminar para seguir almacenando otro contacto.</p>`)
         }
+    
+}
+get listarContactos(){
+    for(let i = 0; i < this.contactos.length; i++){    
+        document.write(`<ul>
+        <li>${i + 1}. ${this.contactos[i].nombre}: ${this.contactos[i].telefono}</li>
+        </ul>`)
     }
+}
+
     set existeContacto(contacto){
-        for(let i = 0; i < Object.keys(this.contactos).length; i++){
-            if(contacto == this.contactos[i]){
-                document.write(`<p>El contacto '${contacto}' esta en su lista de contactos.</p>`)
+        let existe = "";
+        for(let i = 0; i < this.contactos.length; i++){
+            if(this.contactos[i].nombre.includes(contacto.nombre)){
+                existe = `<p>El contacto '${contacto.nombre}' esta en su lista de contactos.</p>`;
+                
+            } else {
+                existe = `<p>No pudimos encontrar al contacto '${contacto.nombre}'.</p>`;
             }
         }
+        document.write(existe)
     }
-    get listarContactos(){
-        for(let i = 0; i < Object.keys(this.contactos).length; i++){
-            document.write(`<ol>
-            <li>${this.contactos[i]}</li>
-            </ol>`)
-        }
-    }
+   
     set buscarContacto(nombre){
-        for(let i = 0; i < Object.keys(this.contactos).length; i++){
-            for(let propiedades in this.contactos){
-                if(propiedades == this.contactos[i].nombre){
-                    document.write(`${this.contactos[i].telefono} es el telefono de ${nombre}`)
+        let buscarContacto = "";
+        for(let i = 0; i < this.contactos.length; i++){
+            if(this.contactos[i].nombre == nombre){
+                    buscarContacto = `${this.contactos[i].telefono} es el telefono de ${nombre}`;
+                } else {
+                    buscarContacto = `No pudimos encontrar un contacto con ese nombre.`
                 }
+            }
+        document.write(buscarContacto + "<br><br>");
+}
+    
+    set eliminarContacto(contacto){
+        let dato = "";
+        for(let i = 0; i < this.contactos.length; i++){
+            if(!this.contactos[i] == contacto){
+                this.contacto[i] = contacto
+            } else {
+                dato =  "No pudimos eliminar ese contacto porque no existe en tu agenda."
             }
         }
-    }
-    set eliminarContacto(nombre){
-        for(let i = 0; i < Object.keys(this.contactos).length; i++){
-            for(let propiedades in this.contactos){
-                if(propiedades == this.contactos[i].nombre){
-                    delete this.contactos[i]
-                } else {
-                    document.write(`<p>No existe un contacto con ese nombre en tu agenda.</p>`)
-                }
-            }
-            
-        } 
+        document.write(dato)
     }
     get agendaLlena(){
         if(Object.keys(this.contactos).length === 10){
@@ -76,49 +86,46 @@ class AgendaTelefonica{
     }
 
 }
-class Contacto extends AgendaTelefonica{
+class Contacto {
     constructor(nombre, telefono){
         this.nombre = nombre;
         this.telefono = telefono;
     }
 }
-const contacto2 = new Contacto("Nico2", 1235)
-
 const agenda = new AgendaTelefonica();
 
-agenda.huecosLibres;
-agenda.agendaLlena;
+const contacto0 = new Contacto("Nico0", 1235);
+const contacto1 = new Contacto("Nico1", 1235);
+const contacto2 = new Contacto("Nico2", 1235);
+const contacto3 = new Contacto("Nico3", 1236);
+const contacto4 = new Contacto("Nico4", 1237);
+const contacto5 = new Contacto("Nico5", 1238);
+const contacto6 = new Contacto("Nico6", 1239);
+const contacto7 = new Contacto("Nico7", 1230);
+const contacto8 = new Contacto("Nico8", 1231);
+const contacto9 = new Contacto("Nico9", 1232);
+
+agenda.agregarContacto = contacto0;
+agenda.agregarContacto = contacto1;
+agenda.existeContacto = contacto3;
+agenda.existeContacto = contacto4;
+agenda.existeContacto = contacto1;
 agenda.listarContactos;
-agenda.agregarContacto(contacto2) 
+
+agenda.buscarContacto = "Nico3"
+agenda.buscarContacto = "Nico1"
+agenda.eliminarContacto = contacto0;
+agenda.eliminarContacto = contacto3;
 
 
+agenda.listarContactos;
 
-
-
-
-
-// const contacto1 = new Contacto("Nico1", 1235)
-// const contacto2 = new Contacto("Nico2", 1235)
-// const contacto3 = new Contacto("Nico3", 1236)
-// const contacto4 = new Contacto("Nico4", 1237)
-// const contacto5 = new Contacto("Nico5", 1238)
-// const contacto6 = new Contacto("Nico6", 1239)
-// const contacto7 = new Contacto("Nico7", 1230)
-// const contacto8 = new Contacto("Nico8", 1231)
-// const contacto9 = new Contacto("Nico9", 1232)
-// const contacto0 = new Contacto("Nico1", 1233)
-
-// const agenda = new AgendaTelefonica();
-
-// agenda.agregarContacto(contacto0)
-// agenda.agregarContacto(contacto1)
-// agenda.agregarContacto(contacto2)
-// agenda.agregarContacto(contacto3)
-// agenda.agregarContacto(contacto4)
-// agenda.agregarContacto(contacto5)
-// agenda.agregarContacto(contacto6)
-// agenda.agregarContacto(contacto7)
-// agenda.agregarContacto(contacto8)
-// agenda.agregarContacto(contacto9)
-
-
+// agenda.agregarContacto = contacto2;
+// agenda.agregarContacto = contacto3;
+// agenda.agregarContacto = contacto4;
+// agenda.agregarContacto = contacto5;
+// agenda.agregarContacto = contacto6;
+// agenda.agregarContacto = contacto7;
+// agenda.agregarContacto = contacto8;
+// agenda.agregarContacto = contacto9;
+ 

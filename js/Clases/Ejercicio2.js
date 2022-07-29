@@ -33,8 +33,6 @@ class Cuenta{
 }
 const cuentaAlex = new Cuenta("Alex");
 
-
-
 do{
     let estadoCuenta = prompt("Bienvenidos a su cuenta, que operacion desea realizar? 1. Ingresar. 2. Extraer. 3. Estado de cuenta");
 
