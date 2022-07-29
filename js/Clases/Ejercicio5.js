@@ -40,7 +40,7 @@ class Persona{
     }
     esMayorDeEdad(){
         if(this.edad >= 18){
-            document.write(`${this.nombre} eres mayor de edad`)
+            document.write(`${this.nombre} eres mayor de edad.`)
         }
         if(this.edad < 18 || isNaN(this.edad)){
             document.write(`${this.persona} eres menor de edad, debes esperar a cumplir 18 años!`)
