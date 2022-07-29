@@ -89,7 +89,7 @@ const agenda = new AgendaTelefonica();
 agenda.huecosLibres;
 agenda.agendaLlena;
 agenda.listarContactos;
-agenda.agregarContacto(contacto2)
+agenda.agregarContacto(contacto2) 
 
 
 
