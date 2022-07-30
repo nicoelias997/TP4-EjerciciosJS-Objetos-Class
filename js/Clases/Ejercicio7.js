@@ -88,16 +88,6 @@ class Contacto {
         this.telefono = telefono;
     }
 }
-
-do{
-    let manipularAgenda = parseInt(prompt("Bienvenido/a a su agenda, elija el numero segun la accion que desea realizar: 1. AgregarContacto. 2. ListarContactos. 3. ExisteContacto. 4. BuscarContacto. 5. EliminarContacto. 6. AgendaLlena. 7. HuecoLibre."))
-    switch(manipularAgenda){
-        case '1':
-
-    }
-} while(confirm("Desea realizar otra operacion?"))
-
-
 const agenda = new AgendaTelefonica();
 
 const contacto0 = new Contacto("Nico0", 1235);
@@ -112,37 +102,37 @@ const contacto8 = new Contacto("Nico8", 1231);
 const contacto9 = new Contacto("Nico9", 1232);
 const contacto10 = new Contacto("Nico10", 12345);
 
-// agenda.agregarContacto = contacto0;
-// agenda.agregarContacto = contacto1;
-// agenda.agregarContacto = contacto2;
-// agenda.agregarContacto = contacto3;
-// agenda.agregarContacto = contacto4;
-// agenda.agregarContacto = contacto5;
-// agenda.agregarContacto = contacto6;
-// agenda.agregarContacto = contacto7;
-// agenda.agregarContacto = contacto8;
-// agenda.agregarContacto = contacto9;
-// // agenda.agregarContacto = contacto10. agregar contactos funciona bien!
+agenda.agregarContacto = contacto0;
+agenda.agregarContacto = contacto1;
+agenda.agregarContacto = contacto2;
+agenda.agregarContacto = contacto3;
+agenda.agregarContacto = contacto4;
+agenda.agregarContacto = contacto5;
+agenda.agregarContacto = contacto6;
+agenda.agregarContacto = contacto7;
+agenda.agregarContacto = contacto8;
+agenda.agregarContacto = contacto9;
+agenda.agregarContacto = contacto10; //agregar contactos funciona bien!
 
-// agenda.listarContactos; //listar contactos funciona bien
-// agenda.agendaLlena;
-// agenda.huecosLibres; //funciona estas dos!
+agenda.listarContactos; //listar contactos funciona bien
+agenda.agendaLlena;
+agenda.huecosLibres; //funciona estas dos!
 
-// agenda.existeContacto = contacto0;
-// agenda.existeContacto = contacto1;
-// agenda.existeContacto = contacto10;
+agenda.existeContacto = contacto0;
+agenda.existeContacto = contacto1;
+agenda.existeContacto = contacto10;
 
-// agenda.buscarContacto = "Nico2";
-// agenda.buscarContacto = "Nico3";
-// agenda.buscarContacto = "Nico10";
+agenda.buscarContacto = "Nico2";
+agenda.buscarContacto = "Nico3";
+agenda.buscarContacto = "Nico10";
 
-// agenda.eliminarContacto = contacto4;
-// agenda.eliminarContacto = contacto5;
-// agenda.eliminarContacto = contacto6;
-// agenda.eliminarContacto = contacto10;
+agenda.eliminarContacto = contacto4;
+agenda.eliminarContacto = contacto5;
+agenda.eliminarContacto = contacto6;
+agenda.eliminarContacto = contacto10;
 
-// agenda.listarContactos; 
-// agenda.agendaLlena;
-// agenda.huecosLibres;
+agenda.listarContactos; 
+agenda.agendaLlena;
+agenda.huecosLibres;
 
  
