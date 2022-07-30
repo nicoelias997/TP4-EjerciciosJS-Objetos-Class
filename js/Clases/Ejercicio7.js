@@ -63,8 +63,9 @@ get listarContactos(){
     set eliminarContacto(contacto){
         let dato = "";
         for(let i = 0; i < this.contactos.length; i++){
-            if(!this.contactos[i] == contacto){
-                this.contacto[i] = contacto
+            if(this.contactos[i].nombre == contacto.nombre){
+                this.contactos.splice(this.contactos[i],1);
+                alert(`Hemos eliminado a ${contacto.nombre} de tu agenda.`)
             } else {
                 dato =  "No pudimos eliminar ese contacto porque no existe en tu agenda."
             }
@@ -80,8 +81,8 @@ get listarContactos(){
        
     }
     get huecosLibres(){
-        if(Object.keys(this.contactos).length < 10){
-            document.write(`<p>Su agenda tiene: ${10 - Object.keys(this.contactos).length} espacios disponibles</p>`)
+        if(this.contactos.length < 10){
+            document.write(`<p>Su agenda tiene: ${10 - this.contactos.length} espacios disponibles</p>`)
         }
     }
 
@@ -107,18 +108,24 @@ const contacto9 = new Contacto("Nico9", 1232);
 
 agenda.agregarContacto = contacto0;
 agenda.agregarContacto = contacto1;
+
 agenda.existeContacto = contacto3;
 agenda.existeContacto = contacto4;
 agenda.existeContacto = contacto1;
+
 agenda.listarContactos;
 
 agenda.buscarContacto = "Nico3"
 agenda.buscarContacto = "Nico1"
+
 agenda.eliminarContacto = contacto0;
 agenda.eliminarContacto = contacto3;
 
 
 agenda.listarContactos;
+
+agenda.agendaLlena;
+agenda.huecosLibres;
 
 // agenda.agregarContacto = contacto2;
 // agenda.agregarContacto = contacto3;
